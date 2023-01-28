@@ -1,5 +1,5 @@
 import React from "react";
 
-export const hangmanWord = () => {
+export const HangmanWord = () => {
   return <div>hangmanWord</div>;
 };

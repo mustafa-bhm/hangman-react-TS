@@ -2,6 +2,9 @@ import { useState } from "react";
 import words from "./wordList.json";
 
 import "./App.css";
+import { HangmanDrawing } from "./HangmanDrawing";
+import { HangmanWord } from "./hangmanWord";
+import { Keyboard } from "./keyboard";
 
 function App() {
   // to set the word to guess
@@ -27,7 +30,7 @@ function App() {
         <div>lose win</div>
         <HangmanDrawing />
         <HangmanWord />
-        <Keyborad />
+        <Keyboard />
       </div>
     </div>
   );

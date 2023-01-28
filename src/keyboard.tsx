@@ -1,5 +1,5 @@
 import React from "react";
 
-export const keyboard = () => {
+export const Keyboard = () => {
   return <div>keyboard</div>;
 };
