@@ -1,0 +1,81 @@
+.base {
+  width: 150px;
+  height: 10px;
+  background-color: black;
+}
+
+.bar {
+  width: 10px;
+  height: 320px;
+  background-color: black;
+}
+
+.horizontal-bar {
+  width: 250px;
+  height: 10px;
+  background-color: black;
+  position: relative;
+}
+
+.bar-down {
+  position: absolute;
+  width: 10px;
+  height: 80px;
+  background-color: rgb(226, 11, 11);
+  margin-left: 250px;
+}
+.head {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(47, 226, 11);
+  margin-left: 230px;
+  margin-top: 80px;
+}
+.torso {
+  position: absolute;
+  width: 10px;
+  height: 100px;
+  background-color: rgb(26, 181, 90);
+  margin-left: 250px;
+  margin-top: 120px;
+}
+.left-arm {
+  position: absolute;
+  margin-left: 230px;
+  margin-top: 130px;
+  width: 10px;
+  height: 80px;
+  background-color: rgb(228, 17, 179);
+  transform: rotate(30deg);
+}
+
+.right-arm {
+  position: absolute;
+  margin-left: 270px;
+  margin-top: 130px;
+  width: 10px;
+  height: 80px;
+  background-color: rgb(217, 228, 17);
+  transform: rotate(-30deg);
+}
+
+.left-leg {
+  position: absolute;
+  margin-left: 230px;
+  margin-top: 210px;
+  width: 10px;
+  height: 80px;
+  background-color: rgb(25, 130, 182);
+  transform: rotate(30deg);
+}
+.right-leg {
+  position: absolute;
+  margin-left: 270px;
+  margin-top: 210px;
+  width: 10px;
+  height: 80px;
+  background-color: rgb(217, 228, 17);
+  transform: rotate(-30deg);
+}
