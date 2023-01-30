@@ -1,3 +1,12 @@
+.App {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  align-items: center;
+}
+
 /* hangman body */
 
 .base {
@@ -117,4 +126,15 @@
 
 .btn {
   text-transform: capitalize;
+}
+.btn:hover,
+btn:focus {
+  background-color: aqua;
+}
+.btn:active {
+  background-color: aqua;
+  color: aliceblue;
+}
+.btn:inactive {
+  opacity: 0.4;
 }

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import words from "./wordList.json";
-
 import "./App.css";
 import { HangmanDrawing } from "./HangmanDrawing";
 import { HangmanWord } from "./HangmanWord";
@@ -14,24 +13,17 @@ function App() {
 
   // to track the guessed letters
   const [guessedLetter, setGuessedLetter] = useState<string[]>([]);
+  // to track the incorrect letters
+  const incorrectLetters = guessedLetter.filter(
+    (letter) => !wordToGuess.includes(letter)
+  );
 
   return (
     <div className="App">
-      <div
-        style={{
-          maxWidth: "800px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "2rem",
-          margin: "0 auto ",
-          alignItems: "center",
-        }}
-      >
-        <div>lose win</div>
-        <HangmanDrawing />
-        <HangmanWord />
-        <Keyboard />
-      </div>
+      <div>lose win</div>
+      <HangmanDrawing numberOfGueses={incorrectLetters.length} />
+      <HangmanWord guessedLetter={guessedLetter} wordToGuess={wordToGuess} />
+      <Keyboard />
     </div>
   );
 }

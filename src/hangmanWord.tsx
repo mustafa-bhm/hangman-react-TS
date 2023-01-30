@@ -1,15 +1,19 @@
-import React from "react";
+type hangmanWordProps = {
+  guessedLetter: string[];
+  wordToGuess: string;
+};
 
-export const HangmanWord = () => {
-  const word: string = "finance";
-  const wordArr: string[] = word.split("");
-  const guesedLetter = ["e", "f", "i", "n"];
-
+export const HangmanWord = ({
+  guessedLetter,
+  wordToGuess,
+}: hangmanWordProps) => {
+  const guesedLetter = [""];
+  console.log("wooord", wordToGuess);
   return (
     <div className="hangmanWord">
-      {wordArr.map((letter, index) => {
+      {wordToGuess.split("").map((letter, index) => {
         return (
-          <span className="letter">
+          <span className="letter" key={index}>
             <span
               className={guesedLetter.includes(letter) ? "" : "hidden"}
               key={index}
