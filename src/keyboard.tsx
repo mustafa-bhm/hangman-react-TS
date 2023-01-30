@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Keyboard = () => {
-  return <div>keyboard</div>;
+  return <div className="keyboard"></div>;
 };

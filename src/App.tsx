@@ -3,8 +3,8 @@ import words from "./wordList.json";
 
 import "./App.css";
 import { HangmanDrawing } from "./HangmanDrawing";
-import { HangmanWord } from "./hangmanWord";
-import { Keyboard } from "./keyboard";
+import { HangmanWord } from "./HangmanWord";
+import { Keyboard } from "./Keyboard";
 
 function App() {
   // to set the word to guess
