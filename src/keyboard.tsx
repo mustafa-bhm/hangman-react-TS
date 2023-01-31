@@ -1,6 +1,14 @@
-import React from "react";
+type keyboardProps = {
+  activeLetter: string[];
+  inactiveLetters: string[];
+  addGuessedLetter: (letter: string) => void;
+};
 
-export const Keyboard = () => {
+export const Keyboard = ({
+  activeLetter,
+  inactiveLetters,
+  addGuessedLetter,
+}: keyboardProps) => {
   const keyboard = [
     "a",
     "b",

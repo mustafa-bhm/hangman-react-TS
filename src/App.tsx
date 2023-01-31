@@ -18,12 +18,26 @@ function App() {
     (letter) => !wordToGuess.includes(letter)
   );
 
+  const addGuessedLetter = (letter: string) => {
+    // check if letter already in the gussedLetter array , then return
+    if (guessedLetter.includes(letter)) return;
+    // if not , add the letter to the guessedLetter array
+
+    setGuessedLetter([...guessedLetter, letter]);
+  };
+
   return (
     <div className="App">
       <div>lose win</div>
       <HangmanDrawing numberOfGueses={incorrectLetters.length} />
       <HangmanWord guessedLetter={guessedLetter} wordToGuess={wordToGuess} />
-      <Keyboard />
+      <Keyboard
+        activeLetter={guessedLetter.filter((letter) =>
+          wordToGuess.includes(letter)
+        )}
+        inactiveLetters={incorrectLetters}
+        addGuessedLetter={addGuessedLetter}
+      />
     </div>
   );
 }
