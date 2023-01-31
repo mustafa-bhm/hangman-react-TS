@@ -22,8 +22,8 @@ function App() {
     // check if letter already in the gussedLetter array , then return
     if (guessedLetter.includes(letter)) return;
     // if not , add the letter to the guessedLetter array
-
     setGuessedLetter([...guessedLetter, letter]);
+    console.log("guessedletters", setGuessedLetter);
   };
 
   return (

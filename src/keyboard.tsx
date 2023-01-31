@@ -41,8 +41,17 @@ export const Keyboard = ({
   return (
     <div className="keyboard">
       {keyboard.map((letter) => {
+        const isActive = activeLetter.includes(letter);
+        const isInactive = inactiveLetters.includes(letter);
         return (
-          <button key={letter} className="btn single-letter">
+          <button
+            onClick={() => addGuessedLetter(letter)}
+            key={letter}
+            className={`btn single-letter ${isActive && `isActive`} ${
+              isInactive && `inactive`
+            }`}
+            disabled={isInactive}
+          >
             {letter}
           </button>
         );

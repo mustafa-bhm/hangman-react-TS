@@ -7,7 +7,7 @@ export const HangmanWord = ({
   guessedLetter,
   wordToGuess,
 }: hangmanWordProps) => {
-  const guesedLetter = [""];
+  // const guesedLetter = [""];
   console.log("wooord", wordToGuess);
   return (
     <div className="hangmanWord">
@@ -15,7 +15,7 @@ export const HangmanWord = ({
         return (
           <span className="letter" key={index}>
             <span
-              className={guesedLetter.includes(letter) ? "" : "hidden"}
+              className={guessedLetter.includes(letter) ? "" : "hidden"}
               key={index}
             >
               {letter}

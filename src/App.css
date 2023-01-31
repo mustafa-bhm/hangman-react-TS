@@ -138,3 +138,9 @@ btn:focus {
 .btn:inactive {
   opacity: 0.4;
 }
+.inactive {
+  opacity: 0.4;
+}
+.isActive {
+  background-color: greenyellow;
+}
