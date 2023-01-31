@@ -8,7 +8,7 @@ export const HangmanWord = ({
   wordToGuess,
 }: hangmanWordProps) => {
   // const guesedLetter = [""];
-  console.log("wooord", wordToGuess);
+
   return (
     <div className="hangmanWord">
       {wordToGuess.split("").map((letter, index) => {
