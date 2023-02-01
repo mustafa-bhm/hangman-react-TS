@@ -45,8 +45,6 @@ function App() {
     if (incorrectLetters.length == 6) {
       setGameOver(true);
       setWinner("You lost !");
-
-      setGuessedLetter([]);
     } else if (check(correctLetters, wordToGuess.split(""))) {
       setGameOver(true);
       setWinner("You Won !");
@@ -63,7 +61,11 @@ function App() {
       <div>{winner}</div>
       <button>click to refresh</button>
       <HangmanDrawing numberOfGueses={incorrectLetters.length} />
-      <HangmanWord guessedLetter={guessedLetter} wordToGuess={wordToGuess} />
+      <HangmanWord
+        guessedLetter={guessedLetter}
+        wordToGuess={wordToGuess}
+        gameOver={gameOver}
+      />
       <Keyboard
         activeLetter={guessedLetter.filter((letter) =>
           wordToGuess.includes(letter)

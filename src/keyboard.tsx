@@ -2,7 +2,7 @@ type keyboardProps = {
   activeLetter: string[];
   inactiveLetters: string[];
   addGuessedLetter: (letter: string) => void;
-  gameOver: boolean;
+  gameOver: boolean | undefined;
 };
 
 export const Keyboard = ({
