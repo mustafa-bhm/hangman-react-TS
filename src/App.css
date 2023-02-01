@@ -93,20 +93,21 @@
   margin-top: 210px;
   width: 10px;
   height: 80px;
-  background-color: rgb(217, 228, 17);
+  background-color: black;
   transform: rotate(-30deg);
 }
 
 /* hangman word */
 .hangmanWord {
-  font-size: 4rem;
-  word-spacing: 1rem;
-
   display: flex;
   gap: 1.5rem;
 }
 .letter {
+  width: 2rem;
+  text-align: center;
+  font-size: 2rem;
   border-bottom: 4px solid;
+  text-transform: capitalize;
 }
 .hidden {
   visibility: hidden;

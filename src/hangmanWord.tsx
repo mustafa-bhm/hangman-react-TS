@@ -15,7 +15,7 @@ export const HangmanWord = ({
     <div className="hangmanWord">
       {wordToGuess.split("").map((letter, index) => {
         return (
-          <span className="letter" key={index}>
+          <div className="letter" key={index}>
             <span
               className={
                 guessedLetter.includes(letter) || gameOver ? "" : "hidden"
@@ -28,7 +28,7 @@ export const HangmanWord = ({
             >
               {letter}
             </span>
-          </span>
+          </div>
         );
       })}
     </div>
