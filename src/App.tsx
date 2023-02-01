@@ -64,9 +64,15 @@ function App() {
 
   return (
     <div className="App">
-      <p>{gameOver && "GAME OVER !"}</p>
-      <div>{winner}</div>
-      {gameOver && <button onClick={() => reset()}>click to reset</button>}
+      <div className="top-menu">
+        <p className="game-over">{gameOver && "GAME OVER"}</p>
+        <div>{winner}</div>
+        {gameOver && (
+          <button className="reset-btn" onClick={() => reset()}>
+            Click to reset
+          </button>
+        )}
+      </div>
       <HangmanDrawing numberOfGueses={incorrectLetters.length} />
       <HangmanWord
         guessedLetter={guessedLetter}
