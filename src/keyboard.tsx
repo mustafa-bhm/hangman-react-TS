@@ -49,7 +49,7 @@ export const Keyboard = ({
           <button
             onClick={() => addGuessedLetter(letter)}
             key={letter}
-            className={`btn single-letter ${isActive && `isActive`} ${
+            className={`btn  ${isActive && `isActive`} ${
               isInactive && `inactive`
             }`}
             disabled={isInactive || gameOver}

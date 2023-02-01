@@ -33,12 +33,10 @@ function App() {
     wordToGuess.includes(letter)
   );
 
-  // compare correct letters with word  using every() & includes
+  // compare correct letters with word  using every() & includes()
 
   let check = (arr: string[], target: string[]) =>
     target.every((v: string) => arr.includes(v));
-  console.log("check", check(correctLetters, wordToGuess.split("")));
-  console.log("correct letters", correctLetters);
   console.log("word to guess", wordToGuess.split(""));
   const [gameOver, setGameOver] = useState<boolean>();
   const [winner, setWinner] = useState<string>("");
