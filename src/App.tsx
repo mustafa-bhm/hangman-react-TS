@@ -6,10 +6,12 @@ import { HangmanWord } from "./HangmanWord";
 import { Keyboard } from "./Keyboard";
 
 function App() {
-  // to set the word to guess
-  const [wordToGuess, setWordtoGuess] = useState(() => {
+  // to generate new word
+  function getWord() {
     return words[Math.floor(Math.random() * words.length)];
-  });
+  }
+  // to set the word to guess
+  const [wordToGuess, setWordtoGuess] = useState(getWord);
 
   // to track the guessed letters
   const [guessedLetter, setGuessedLetter] = useState<string[]>([]);
@@ -55,11 +57,18 @@ function App() {
     isGameOver();
   }, [guessedLetter]);
 
+  function reset() {
+    setGameOver(false);
+    setWinner("");
+    setWordtoGuess(getWord());
+    setGuessedLetter([]);
+  }
+
   return (
     <div className="App">
       <p>{gameOver && "GAME OVER !"}</p>
       <div>{winner}</div>
-      <button>click to refresh</button>
+      {gameOver && <button onClick={() => reset()}>click to reset</button>}
       <HangmanDrawing numberOfGueses={incorrectLetters.length} />
       <HangmanWord
         guessedLetter={guessedLetter}
