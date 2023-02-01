@@ -2,12 +2,14 @@ type keyboardProps = {
   activeLetter: string[];
   inactiveLetters: string[];
   addGuessedLetter: (letter: string) => void;
+  gameOver: boolean;
 };
 
 export const Keyboard = ({
   activeLetter,
   inactiveLetters,
   addGuessedLetter,
+  gameOver,
 }: keyboardProps) => {
   const keyboard = [
     "a",
@@ -50,7 +52,7 @@ export const Keyboard = ({
             className={`btn single-letter ${isActive && `isActive`} ${
               isInactive && `inactive`
             }`}
-            disabled={isInactive}
+            disabled={isInactive || gameOver}
           >
             {letter}
           </button>

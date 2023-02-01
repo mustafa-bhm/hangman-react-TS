@@ -45,6 +45,8 @@ function App() {
     if (incorrectLetters.length == 6) {
       setGameOver(true);
       setWinner("You lost !");
+
+      setGuessedLetter([]);
     } else if (check(correctLetters, wordToGuess.split(""))) {
       setGameOver(true);
       setWinner("You Won !");
@@ -53,13 +55,13 @@ function App() {
 
   useEffect(() => {
     isGameOver();
-  }, [incorrectLetters]);
+  }, [guessedLetter]);
 
   return (
     <div className="App">
       <p>{gameOver && "GAME OVER !"}</p>
       <div>{winner}</div>
-
+      <button>click to refresh</button>
       <HangmanDrawing numberOfGueses={incorrectLetters.length} />
       <HangmanWord guessedLetter={guessedLetter} wordToGuess={wordToGuess} />
       <Keyboard
@@ -68,6 +70,7 @@ function App() {
         )}
         inactiveLetters={incorrectLetters}
         addGuessedLetter={addGuessedLetter}
+        gameOver={gameOver}
       />
     </div>
   );
