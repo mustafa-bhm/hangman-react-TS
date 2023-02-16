@@ -37,7 +37,7 @@ function App() {
 
   let check = (arr: string[], target: string[]) =>
     target.every((v: string) => arr.includes(v));
-  console.log("word to guess", wordToGuess.split(""));
+  console.log("word to guess", wordToGuess);
   const [gameOver, setGameOver] = useState<boolean>();
   const [winner, setWinner] = useState<string>("");
 
