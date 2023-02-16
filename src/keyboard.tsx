@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { BsFillGearFill } from "react-icons/bs";
+
 type keyboardProps = {
   activeLetter: string[];
   inactiveLetters: string[];
@@ -39,7 +42,14 @@ export const Keyboard = ({
     "y",
     "z",
   ];
-
+  const [show, setShow] = useState(false);
+  const handelClick = () => {
+    if (show === true) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+  };
   return (
     <div className="keyboard">
       {keyboard.map((letter) => {
@@ -58,6 +68,20 @@ export const Keyboard = ({
           </button>
         );
       })}
+      <div className="icon">
+        <BsFillGearFill size={35} onClick={() => handelClick()} />
+        <p>Rules</p>
+      </div>
+      {show && <Rules />}
     </div>
   );
 };
+
+const Rules = () => (
+  <div className="rules">
+    <p>
+      Try to figure out the unknown word by guessing letters. If too many
+      letters which do not appear in the word are guessed, you will lose.
+    </p>
+  </div>
+);
